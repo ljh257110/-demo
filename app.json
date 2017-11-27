@@ -9,25 +9,34 @@
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle": "black"
+    "navigationBarTextStyle": "black",
+    "enablePullDownRefresh":true
   },
   "tabBar": {
-    "color": "#999",
-    "selectedColor": "#333",
+    "color": "#707070",
+    "selectedColor": "#1afa29",
     "list": [
       {
+        "iconPath":"icon/首页.png",
+        "selectedIconPath":"icon_select/首页.png",
         "pagePath": "pages/index/index",
         "text": "首页"
       },
       {
+        "iconPath": "icon/日志.png",
+        "selectedIconPath": "icon_select/日志.png",
         "pagePath": "pages/logs/logs",
         "text": "日志"
       },
       {
+        "iconPath": "icon/发现.png",
+        "selectedIconPath": "icon_select/发现.png",
         "pagePath": "pages/find/find",
         "text": "发现"
       },
       {
+        "iconPath": "icon/设置.png",
+        "selectedIconPath": "icon_select/设置.png",
         "pagePath": "pages/setting/setting",
         "text": "设置"
       }
