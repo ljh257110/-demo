@@ -5,11 +5,14 @@ Page({
    * 页面的初始数据
    */
   data: {
-    src:"",
-    bool:false
+    imgsrc:"",
+    videosrc:"",
+    imgbool:false,
+    videobool:false
   },
   findpic(){
     var self = this;
+    console.log(self)
     wx.chooseImage({
       count: 1, // 默认9
       sizeType: ['original', 'compressed'], // 可以指定是原图还是压缩图，默认二者都有
@@ -20,15 +23,50 @@ Page({
         var tempFilePaths = res.tempFilePaths;
         console.log(tempFilePaths[0])
         self.setData({
-          src: tempFilePaths[0],
-          bool:true
+          imgsrc: tempFilePaths[0],
+          imgbool:true
         })
       }
     })
   },
   cancel(){
     this.setData({
-      bool: false
+      imgbool: false
+    })
+  },
+  videoshow() {
+    var that = this;
+    console.log(that)   
+    wx.chooseVideo({
+      sourceType: ['album', 'camera'],
+      maxDuration: 60,
+      camera: 'back',
+      success: function (res) {
+        console.log(1)
+        console.log(that.viseosrc)
+        console.log(res.tempFilePath)
+        that.setData({
+          videosrc: res.tempFilePath,
+          videobool:true
+        })
+      },
+      fail:function(err){
+          console.log(err)
+      }
+    })
+  },
+  fileshow(){
+    wx.chooseImage({
+      success: function (res) {
+        var tempFilePaths = res.tempFilePaths
+        wx.saveFile({
+          tempFilePath: tempFilePaths[0],
+          success: function (res) {
+            var savedFilePath = res.savedFilePath
+            console.log(savedFilePath)
+          }
+        })
+      }
     })
   },
   /**

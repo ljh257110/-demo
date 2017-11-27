@@ -2,11 +2,13 @@
 <text>发现</text>
 <ul>
   <li><button bindtap='findpic'>图片</button>
-  <image src='{{src}}' hidden='{{!bool}}'></image>
-  <button bindtap='cancel' hidden='{{!bool}}'>取消</button>
+  <image src='{{imgsrc}}' hidden='{{!imgbool}}'></image>
+  <button bindtap='cancel' hidden='{{!imgbool}}'>取消</button>
   </li>
-  <li><button>录音</button></li>
+  <li><button bindtap='videoshow'>视频</button>
+  <video src="{{videosrc}}" hidden='{{!videobool}}'></video>
+  </li>
   <li><button>相机</button></li>
   <li><button>位置</button></li>
-  <li><button>文件</button></li>
+  <li><button bindtap='fileshow'>文件</button></li>
 </ul>
