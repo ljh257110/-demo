@@ -8,7 +8,9 @@ Page({
     imgsrc:"",
     videosrc:"",
     imgbool:false,
-    videobool:false
+    videobool:false,
+    file:"",
+    filebool:false
   },
   findpic(){
     var self = this;
@@ -56,6 +58,7 @@ Page({
     })
   },
   fileshow(){
+    var self = this;
     wx.chooseImage({
       success: function (res) {
         var tempFilePaths = res.tempFilePaths
@@ -64,9 +67,18 @@ Page({
           success: function (res) {
             var savedFilePath = res.savedFilePath
             console.log(savedFilePath)
+            self.setData({
+              file: savedFilePath,
+              filebool:true
+            })
           }
         })
       }
+    })
+  },
+  filecancel() {
+    this.setData({
+      filebool: false
     })
   },
   /**
