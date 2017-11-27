@@ -1,0 +1,9 @@
+<!--pages/setting/setting.wxml-->
+<text>setting</text>
+<ul>
+  <li>钱包</li>
+  <li>收藏</li>
+  <li>相册</li>
+  <li>表情</li>
+  <li>设置</li>
+</ul>

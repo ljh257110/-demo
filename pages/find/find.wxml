@@ -1,0 +1,9 @@
+<!--pages/find/find.wxml-->
+<text>发现</text>
+<ul>
+  <li>朋友圈</li>
+  <li>扫一扫</li>
+  <li>摇一摇</li>
+  <li>附近的人</li>
+  <li>小程序</li>
+</ul>
