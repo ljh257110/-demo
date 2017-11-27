@@ -8,7 +8,11 @@
   <li><button bindtap='videoshow'>视频</button>
   <video src="{{videosrc}}" hidden='{{!videobool}}'></video>
   </li>
-  <li><button>相机</button></li>
+  <li><button bindtap='netInfo'>网络</button>
+  <view hidden='{{!netbool}}'>当前是否有网络连接：{{isConnected}}</view>
+  <view hidden='{{!netbool}}'>网络类型：{{networkType}}</view>
+  <button bindtap='netcancel' hidden='{{!netbool}}'>取消</button>
+  </li>
   <li><button bindtap='locationInfo'>位置</button></li>
   <li><button bindtap='fileshow'>文件</button>
   <view  hidden='{{!filebool}}'>{{file}}</view>

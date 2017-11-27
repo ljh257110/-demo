@@ -10,7 +10,10 @@ Page({
     imgbool:false,
     videobool:false,
     file:"",
-    filebool:false
+    filebool:false,
+    isConnected:false,
+    networkType:"none",
+    netbool:false
   },
   findpic(){
     var self = this;
@@ -38,14 +41,11 @@ Page({
   },
   videoshow() {
     var that = this;
-    console.log(that)   
     wx.chooseVideo({
       sourceType: ['album', 'camera'],
       maxDuration: 60,
       camera: 'back',
       success: function (res) {
-        console.log(1)
-        console.log(that.viseosrc)
         console.log(res.tempFilePath)
         that.setData({
           videosrc: res.tempFilePath,
@@ -93,6 +93,23 @@ Page({
           scale: 28
         })
       }
+    })
+  },
+  netInfo(){
+    var self= this;
+    wx.onNetworkStatusChange(function (res) {
+      console.log(res.isConnected)
+      console.log(res.networkType)
+      self.setData({
+        isConnected: res.isConnected,
+        networkType: res.networkType,
+        netbool:true
+      })
+    })
+  },
+  netcancel(){
+    this.setData({
+      netbool: false
     })
   },
   /**
