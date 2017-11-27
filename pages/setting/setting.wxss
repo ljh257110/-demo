@@ -6,7 +6,7 @@ text{
   font-size: 30px;
 }
 ul li{
-  width: 70%;
+  width: 75%;
   margin-left: 50px;
   display: block;
   border-bottom: 1px solid #333;

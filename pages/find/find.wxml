@@ -1,9 +1,12 @@
 <!--pages/find/find.wxml-->
 <text>发现</text>
 <ul>
-  <li>朋友圈</li>
-  <li>扫一扫</li>
-  <li>摇一摇</li>
-  <li>附近的人</li>
-  <li>小程序</li>
+  <li><button bindtap='findpic'>图片</button>
+  <image src='{{src}}' hidden='{{!bool}}'></image>
+  <button bindtap='cancel' hidden='{{!bool}}'>取消</button>
+  </li>
+  <li><button>录音</button></li>
+  <li><button>相机</button></li>
+  <li><button>位置</button></li>
+  <li><button>文件</button></li>
 </ul>
